@@ -1,0 +1,18 @@
+body {
+	background: yellow;
+}
+
+#left{
+	color:black;
+}
+
+button {
+	margin-left: 20px;
+	margin-bottom:10px;
+}
+
+body {
+	background-image: url("/assets/images/CheeseBurger.png")
+	
+
+}
