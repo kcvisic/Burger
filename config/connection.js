@@ -1,10 +1,10 @@
 var mysql = require("mysql");
-
+var credendtials = require('credentials.js');
 var connection = mysql.createConnection({
-  host: "localhost",
-  user: "",
-  password: "",
-  database: "burgers_db"
+  host: process.env.MYSQL_HOST || credendtials.HOST,
+  user: process.env.MYSQL_USER || credendtials.MYSQL_USER,
+  password: process.env.MYSQL_PASS || credendtials.MYSQL_PASS,
+  database: process.env.MYSQL_DATABASE || credendtials.MYSQL_DATABASE,
 });
 
 connection.connect(function(err) {
