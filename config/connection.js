@@ -4,15 +4,18 @@ var connection = null;
 
 // we are running on Heroku because the DATABASE_URL environment variable is set...
 if (process.env.DATABASE_URL) {
+
+    console.log("The 'DATABASE_URL' env variable was set, using the 'DATABASE_URL' variable to connect...");
     connection = mysql.createConnection(process.env.DATABASE_URL);
 }
 
 // we are running locally and we create the connection based on out credential file...
 else {
 
+    console.log("The 'DATABASE_URL' env variable was not set, using local credentials file")
     // this file will only exist if we are running locally. 
     try {
-        credendtials = require('credentials.js');
+        credendtials = require('./credentials.js');
 
     } catch (err) {
         credendtials = {
