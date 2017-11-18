@@ -1,27 +1,36 @@
 var mysql = require("mysql");
 var credendtials = null;
+var connection = null;
 
-// this file will only exist if we are running locally. If we run on heroku, our
-// db configutation will be set in the environment variables which we read below
-try {
-    credendtials = require('credentials.js');
-} catch (err) {
-    credendtials = {
-        HOST: "",
-        MYSQL_USER: "",
-        MYSQL_PASS: "",
-        MYSQL_DATABASE: "",
-    }
-
+// we are running on Heroku because the DATABASE_URL environment variable is set...
+if (process.env.DATABASE_URL) {
+    connection = mysql.createConnection(process.env.DATABASE_URL);
 }
 
+// we are running locally and we create the connection based on out credential file...
+else {
 
-var connection = mysql.createConnection({
-    host: process.env.MYSQL_HOST || credendtials.HOST,
-    user: process.env.MYSQL_USER || credendtials.MYSQL_USER,
-    password: process.env.MYSQL_PASS || credendtials.MYSQL_PASS,
-    database: process.env.MYSQL_DATABASE || credendtials.MYSQL_DATABASE,
-});
+    // this file will only exist if we are running locally. 
+    try {
+        credendtials = require('credentials.js');
+
+    } catch (err) {
+        credendtials = {
+            HOST: "",
+            MYSQL_USER: "",
+            MYSQL_PASS: "",
+            MYSQL_DATABASE: "",
+        }
+    }
+
+    connection = mysql.createConnection({
+        host: credendtials.HOST,
+        user: credendtials.MYSQL_USER,
+        password: credendtials.MYSQL_PASS,
+        database: credendtials.MYSQL_DATABASE,
+    });
+
+}
 
 connection.connect(function(err) {
     if (err) {
