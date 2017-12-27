@@ -1,5 +1,5 @@
 body {
-	background: yellow;
+	/*background: yellow;*/
 }
 
 #left{
@@ -7,12 +7,35 @@ body {
 }
 
 button {
-	margin-left: 20px;
+	margin-left: 40px;
 	margin-bottom:10px;
 }
 
-body {
-	background-image: url("/assets/images/CheeseBurger.png")
-	
+body{
+	margin: 0 auto;
+	background: url("/assets/images/burger2.jpg")
+	no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+
 
 }
+
+.eatBurger{
+	height: 50px;
+}
+
+#submitBtn{
+	height: 50px;
+	width: 100px;
+}
+
+ #burg{
+	 height: 50px;
+ 	width: 300px;
+ }
+ .textStyle{
+	 margin-left: 80px;
+ }

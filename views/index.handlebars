@@ -1,26 +1,26 @@
 <div class ="container >
 
 <div class="row">
-<h2>Add a Burger</h2>
+<h2 class="textStyle">Create a Burger</h2>
 <form class="create-form">
 <div class="form-group">
-  <label for="burg">Place an order:</label>
+  <label for="burg">Yum!</label>
   <input type="text" id="burg" name="name">
 </div>
-<button type="submit">Submit</button>
+<button id="submitBtn" type="submit"><strong>Submit</strong></button>
 </form>
 </div>
 
 <div class="row">
 <div class="col-md-6">
-<h2>Ready to be devoured!</h2>
+<h2 class="textStyle">Ready to be devoured!</h2>
 <ul>
 {{#each burgers}}
 {{#unless devoured}}
-<li> 
+<li>
 
 <button class="eatBurger"  data-id="{{id}}" data-aboutToBeEaten="{{devoured}}">
-    {{#if devoured}}Yum!{{else}}{{burger_name}}{{/if}}
+  <strong>  {{#if devoured}}Yum!{{else}}{{burger_name}}{{/if}}</strong>
 </button>
 </li>
 {{/unless}}
@@ -30,14 +30,14 @@
 
 
 <div class="col-md-6">
-<h2>Devoured!</h2>
+<h2 class="textStyle">Devoured!</h2>
 <ul>
 {{#each burgers}}
 {{#if devoured}}
-<li> 
+<li>
 
 <button class="eatBurger" data-id="{{id}}" data-aboutToBeEaten="{{devoured}}">
-    {{#if devoured}}{{burger_name}}{{else}}Eat me{{/if}}
+      <strong>{{#if devoured}}{{burger_name}}{{else}}Eat me{{/if}}</strong>
 </button>
 </li>
 {{/if}}

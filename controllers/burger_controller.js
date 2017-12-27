@@ -16,6 +16,7 @@ router.get('/', function(req, res) {
         };
         console.log(hbsObject);
         res.render('index', hbsObject);
+    
     });
 });
 
@@ -25,7 +26,7 @@ router.post("/some/resource/path", function(req, res) {
 })
 
 
-// Create a New Burger 
+// Create a New Burger
 router.post('/api/burger', function(req, res) {
     burger.insertOne([
 
@@ -41,7 +42,7 @@ router.post('/api/burger', function(req, res) {
 });
 
 
-// Devour a Burger 
+// Devour a Burger
 router.put('/api/burger/:id', function(req, res) {
     var condition = "id =" + req.params.id
     burger.updateOne({
@@ -55,11 +56,11 @@ router.put('/api/burger/:id', function(req, res) {
     } else {
       res.status(200).end();
     }
-            
+
         });
 });
 // ----------------------------------------------------
 
 
-// Export route  
+// Export route
 module.exports = router;
