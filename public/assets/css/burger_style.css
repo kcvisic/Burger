@@ -1,6 +1,4 @@
-body {
-	/*background: yellow;*/
-}
+
 
 #left{
 	color:black;
@@ -26,6 +24,9 @@ body{
 .eatBurger{
 	height: 50px;
 }
+.clearBurger{
+	height: 50px;
+}
 
 #submitBtn{
 	height: 50px;
@@ -35,7 +36,12 @@ body{
  #burg{
 	 height: 50px;
  	width: 300px;
+	padding-left: 10px
  }
  .textStyle{
 	 margin-left: 80px;
+	 color:aliceblue
  }
+#glif{
+	padding-left: 20px
+}
