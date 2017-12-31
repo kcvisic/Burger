@@ -21,6 +21,7 @@
 
 <button class="eatBurger"  data-id="{{id}}" data-aboutToBeEaten="{{devoured}}">
   <strong>  {{#if devoured}}Yum!{{else}}{{burger_name}}{{/if}}</strong>
+  <span id="gliff" class="glyphicon glyphicon-cutlery"></span>
 </button>
 </li>
 {{/unless}}
@@ -37,7 +38,8 @@
 <li>
 
 <button class="clearBurger" data-id="{{this.id}}" data-aboutToBeEaten="{{devoured}}">
-<strong>{{#if devoured}}{{burger_name}}{{else}}Eat me{{/if}}</strong><span id="glif" class="glyphicon glyphicon-remove" ></span>
+<strong>{{#if devoured}}{{burger_name}}{{else}}Eat me{{/if}}</strong>
+<span id="glif" class="glyphicon glyphicon-remove"></span>
 </button>
 </li>
 {{/if}}
